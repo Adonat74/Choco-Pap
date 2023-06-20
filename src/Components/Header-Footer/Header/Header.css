@@ -23,6 +23,8 @@
 
 .menu > a {
     margin-right: 40px;
+    text-decoration: none;
+    color: #55C0CF;
 }
 
 .cartContainer {
@@ -45,6 +47,10 @@
     font-size: 2rem;
     padding: 0;
     text-decoration: underline;
+}
+
+.menuDeroulant > a {
+    color: #55C0CF;
 }
 
 .nbPanier {

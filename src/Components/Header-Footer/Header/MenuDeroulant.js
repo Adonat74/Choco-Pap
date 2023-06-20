@@ -6,7 +6,7 @@ export default function MenuDeroulant () {
 
     return (
         <div className="menuDeroulant">
-                <a className="elementsDeroulant accueil">Accueil</a>
+                <a href="/accueil" className="elementsDeroulant accueil">Accueil</a>
                 <a className="elementsDeroulant">Boutique</a>
                 <div className="elementsDeroulant">
                     <a>Panier</a>
