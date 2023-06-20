@@ -15,7 +15,7 @@ export default function Footer () {
             <div className="header">
                 <img className="logo" src="/images/logo.png" alt="Logo Choco-Pap"></img>
                 <div className="menu">
-                    <a>Acceuil</a>
+                    <a>Accueil</a>
                     <a>Boutique</a>
                     <div className="cartContainer">
                         <p>2</p>
@@ -24,7 +24,9 @@ export default function Footer () {
                 </div>
                 <button className="burger" onClick={toggleMenu}><img className="burgerLogo" src="/images/icons/bars-solid-choco-pap.svg" alt="Menu déroulant logo"></img></button>
             </div>
+
             {menuToggle ? <MenuDeroulant /> : null}
+
         </div>
     );
 }

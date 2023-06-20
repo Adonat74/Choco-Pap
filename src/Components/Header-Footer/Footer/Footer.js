@@ -9,7 +9,10 @@ export default function Footer () {
         <div className="footer">
             <div className="footerText">
                 <h3>Choco Pap</h3>
-                <p className="loremFooter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis lacinia lacus. Ut cursus mauris id ligula dictum pellentesque. Donec vestibulum lacus id dolor feugiat.</p>
+                <p className="loremFooter">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Nunc quis lacinia lacus. Ut cursus
+                mauris id ligula dictum pellentesque. Donec vestibulum
+                lacus id dolor feugiat.</p>
             </div>
             <div className="footerText">
                 <h3>Contact</h3>

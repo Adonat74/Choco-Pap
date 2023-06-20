@@ -43,16 +43,11 @@
     background-color: #B65F28;
     color: #55C0CF;
     font-size: 2rem;
-    padding: 10px 10px;
+    padding: 0;
     text-decoration: underline;
 }
 
-.cartContainerDeroulant {
-    display: flex;
-    align-items: center;
-}
-
-.cartContainerDeroulant > p {
+.nbPanier {
     margin-left: 15px;
 }
 
@@ -60,13 +55,17 @@
     width: 50px;
 }
 
-
-.acceuil {
-    margin-bottom: 10px;
+.elementsDeroulant {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px dashed #55C0CF;
 }
 
-.elementsDeroulant {
-    height: 60px;
+.accueil {
+    border-top: 1px dashed #55C0CF;
 }
 
 .burger {
@@ -93,13 +92,4 @@
     .menuDeroulant {
         display: none;
     }
-}
-
-
-@media screen and (min-width: 1024px) { 
-
-}
-
-@media screen and (min-width: 1200px) {
-
 }

@@ -4,26 +4,31 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 10px 30px 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 500px;
 }
 
 .footerText > h3 {
     font-size: 2rem;
     color: #FFD543;
+    padding-left: 30px;
+    text-shadow: #B65F28 3px 3px;
+    letter-spacing: 2px;
 }
 
 .footerText > p {
     line-height: 23px;
-}
-
-.loremFooter {
     max-width: 400px;
+    padding-left: 30px;
 }
 
 .footerLogos {
     display: flex;
     width: 200px;
     justify-content: space-between;
+    padding: 20px 30px 30px;
 }
 
 .footerLogos > img {
@@ -32,11 +37,11 @@
 
 
 @media screen and (min-width: 768px) { 
-
     .footer {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        height: 300px;
     }
 
     .footerText {
@@ -44,13 +49,12 @@
     }
 }
 
-
-@media screen and (min-width: 1024px) { 
-
-}
-
 @media screen and (min-width: 1200px) {
-    .footer {
+    .footerText {
         padding: 10px 80px 30px;
+    }
+
+    .footerLogos {
+        padding-right: 80px;
     }
 }
