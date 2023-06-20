@@ -16,7 +16,7 @@ export default function Footer () {
                 <img className="logo" src="/images/logo.png" alt="Logo Choco-Pap"></img>
                 <div className="menu">
                     <a href="/accueil">Accueil</a>
-                    <a>Boutique</a>
+                    <a href="/boutique">Boutique</a>
                     <div className="cartContainer">
                         <p>2</p>
                         <img className="cartLogo" src="/images/icons/cart-shopping-solid.svg" alt="Cart Logo"></img>

@@ -21,16 +21,17 @@
     position: absolute;
     top: 60%;
     left: 50%;
-    margin-left: -110px;
+    margin-left: -120px;
     z-index: 100;
     padding: 15px 20px;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 800;
     border: none;
     box-shadow: 10px 10px 0px #B65F28;
     background-color: #FFD543;
     color: #2C1E1E;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .slides {

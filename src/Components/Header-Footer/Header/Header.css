@@ -41,7 +41,7 @@
 .menuDeroulant {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     background-color: #B65F28;
     color: #55C0CF;
     font-size: 2rem;
@@ -62,11 +62,10 @@
 }
 
 .elementsDeroulant {
-    width: 100%;
+    width: 90%;
     height: 75px;
     display: flex;
     align-items: center;
-    padding: 0 10px;
     border-bottom: 1px dashed #55C0CF;
 }
 

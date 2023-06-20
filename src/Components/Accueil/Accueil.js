@@ -28,7 +28,7 @@ export default function Accueil () {
         <div className="sliderContainer">
             <div className="slider">
                 <h1 className="titreAccueil">CHOCO PAP</h1>
-                <button className="buttonAccueil">Voir la boutique</button>
+                <a href="/boutique" className="buttonAccueil">Voir la boutique</a>
                 <div className="slides">
                     <div id="slide1" className="slide">
                         <img className="slidesImages" src="/images/accueil1.jpg" alt="Slides Images 1"></img>
