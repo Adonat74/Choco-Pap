@@ -17,15 +17,15 @@ export default function Boutique () {
                 rating={data.rating}
                 img={data.image}
             />
-        )
-    })
+        );
+    });
 
     return (
         <div>
             <h1 className="titreBoutique">BOUTIQUE</h1>
             <div className="boutique">
                 <Filtre />
-                <div>
+                <div className="productGrid">
                     {productElements}
                 </div>
             </div>

@@ -47,7 +47,7 @@ const Data = [{
     }
 },{
     id: nanoid(),
-    title: "T'es blanc comme un Coeur",
+    title: "Blanc Coeur",
     priceInCents: 715,
     rating: 4.5,
     image: "produit4.jpg",
