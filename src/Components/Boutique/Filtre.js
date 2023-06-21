@@ -112,8 +112,8 @@ export default function Filtre (props) {
                 <label htmlFor="minPrice">Prix min</label>
                 <select 
                     id="minPrice" 
-                    //value={formData.favColor}
-                    onChange={() => props.handleSelect()}
+                    value={props.valueSelect.minPrice}
+                    onChange={(event) => props.handleSelect(event)}
                     name="minPrice"
                 >
                     {priceSelectOptions}
@@ -123,8 +123,8 @@ export default function Filtre (props) {
                 <label htmlFor="maxPrice">Prix max</label>
                 <select 
                     id="maxPrice" 
-                    //value={formData.favColor}
-                    onChange={() => props.handleSelect()}
+                    value={props.valueSelect.maxPrice}
+                    onChange={(event) => props.handleSelect(event)}
                     name="maxPrice"
                 >
                     {priceSelectOptions}
@@ -135,8 +135,8 @@ export default function Filtre (props) {
                 <label htmlFor="minRating">Note min</label>
                 <select 
                     id="minRating" 
-                    //value={formData.favColor}
-                    onChange={() => props.handleSelect()}
+                    value={props.valueSelect.minRating}
+                    onChange={(event) => props.handleSelect(event)}
                     name="minRating"
                 >
                     {ratingSelectOptions}
@@ -145,8 +145,8 @@ export default function Filtre (props) {
                 <label htmlFor="maxRating">Note max</label>
                 <select 
                     id="maxRating" 
-                    //value={formData.favColor}
-                    onChange={() => props.handleSelect()}
+                    value={props.valueSelect.maxRating}
+                    onChange={(event) => props.handleSelect(event)}
                     name="maxRating"
                 >
                     {ratingSelectOptions}
