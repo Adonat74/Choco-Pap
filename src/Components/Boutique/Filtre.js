@@ -1,10 +1,12 @@
 import React from "react"
 import "./Boutique.css"
 
-export default function Boutique () {
+export default function Filtre (props) {
 
     const numberListPrice = [1,2,3,4,5,6,7,8,9,10];
     const numberListRating = [1,2,3,4,5];
+    
+
 
     const priceSelectOptions = numberListPrice.map((number, index) => {
         return (
@@ -26,11 +28,6 @@ export default function Boutique () {
 
 
 
-    function handleChange() {
-        console.log("changed");
-    }
-
-
     return (
         <div className="filter">
             <h2>Filtre</h2>
@@ -39,64 +36,73 @@ export default function Boutique () {
                 <input
                     type="checkbox" 
                     id="tous" 
-                    value="tous"
-                    onChange={handleChange}
+                    value={props.tousValue}
+                    checked={props.tousValue}
+                    onChange={(event) => props.handleTous(event)}
                     name="tous"
                 />
                 <label htmlFor="tous">Tous</label><br/>
+                
                 <input
-                    type="checkbox" 
+                    type="checkbox"
                     id="chocolatBlanc" 
-                    value="chocolatBlanc"
-                    onChange={handleChange}
+                    value={props.value.chocolatBlanc}
+                    checked={props.value.chocolatBlanc}
+                    onChange={(event) => props.handleChange("chocolatBlanc", event)}
                     name="chocolatBlanc"
                 />
                 <label htmlFor="chocolatBlanc">Chocolat blanc</label><br/>
                 <input
                     type="checkbox" 
                     id="chocolatLait" 
-                    value="chocolatLait"
-                    onChange={handleChange}
+                    value={props.value.chocolatLait}
+                    checked={props.value.chocolatLait}
+                    onChange={(event) => props.handleChange("chocolatLait", event)}
                     name="chocolatLait"
                 />
                 <label htmlFor="chocolatLait">Chocolat au lait</label><br/>
                 <input
                     type="checkbox" 
                     id="chocolatNoir" 
-                    value="chocolatNoir"
-                    onChange={handleChange}
+                    value={props.value.chocolatNoir}
+                    checked={props.value.chocolatNoir}
+                    onChange={(event) => props.handleChange("chocolatNoir", event)}
                     name="chocolatNoir"
                 />
                 <label htmlFor="chocolatNoir">Chocolat noir</label><br/>
                 <input
                     type="checkbox" 
                     id="noixNoisette" 
-                    value="noixNoisette"
-                    onChange={handleChange}
+                    value={props.value.noixNoisette}
+                    checked={props.value.noixNoisette}
+                    onChange={(event) => props.handleChange("noixNoisette", event)}
                     name="noixNoisette"
                 />
                 <label htmlFor="noixNoisette">Noix/Noisette</label><br/>
                 <input
                     type="checkbox" 
                     id="fruit" 
-                    value="fruit"
-                    onChange={handleChange}
+                    value={props.value.fruit}
+                    checked={props.value.fruit}
+                    onChange={(event) => props.handleChange("fruit", event)}
                     name="fruit"
                 />
                 <label htmlFor="fruit">Fruit</label><br/>
                 <input
                     type="checkbox" 
                     id="caramel" 
-                    value="caramel"
-                    onChange={handleChange}
+                    value={props.value.caramel}
+                    checked={props.value.caramel}
+                    onChange={(event) => props.handleChange("caramel", event)}
                     name="caramel"
                 />
                 <label htmlFor="caramel">Caramel</label><br/>
                 <input
                     type="checkbox" 
                     id="liqueur" 
-                    value="liqueur"
-                    onChange={handleChange}
+                    value={props.value.liqueur}
+                    checked={props.value.liqueur}
+                    onChange={(event) => props.handleChange("liqueur", event)}
                     name="liqueur"
                 />
                 <label htmlFor="liqueur">Liqueur</label><br/>
@@ -107,7 +113,7 @@ export default function Boutique () {
                 <select 
                     id="minPrice" 
                     //value={formData.favColor}
-                    onChange={handleChange}
+                    onChange={() => props.handleSelect()}
                     name="minPrice"
                 >
                     {priceSelectOptions}
@@ -118,7 +124,7 @@ export default function Boutique () {
                 <select 
                     id="maxPrice" 
                     //value={formData.favColor}
-                    onChange={handleChange}
+                    onChange={() => props.handleSelect()}
                     name="maxPrice"
                 >
                     {priceSelectOptions}
@@ -130,7 +136,7 @@ export default function Boutique () {
                 <select 
                     id="minRating" 
                     //value={formData.favColor}
-                    onChange={handleChange}
+                    onChange={() => props.handleSelect()}
                     name="minRating"
                 >
                     {ratingSelectOptions}
@@ -140,7 +146,7 @@ export default function Boutique () {
                 <select 
                     id="maxRating" 
                     //value={formData.favColor}
-                    onChange={handleChange}
+                    onChange={() => props.handleSelect()}
                     name="maxRating"
                 >
                     {ratingSelectOptions}
