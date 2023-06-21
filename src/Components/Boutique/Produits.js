@@ -1,7 +1,7 @@
 import React from "react"
 import "./Boutique.css"
 
-export default function Boutique (props) {
+export default function Produits (props) {
 
 
     return (

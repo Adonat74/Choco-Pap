@@ -6,135 +6,100 @@ const Data = [{
     priceInCents: 525,
     rating: 4.1,
     image: "produit1.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: true,
-        chocolatNoir: false,
-        noixNoisette: true,
-        fruit: true,
-        caramel: false,
-        liqueur: true
-    }
+    catégories: [
+        "chocolatLait",
+        "noixNoisette",
+        "fruit",
+        "liqueur"
+    ]
 },{
     id: nanoid(),
     title: "Caramel'oeuf",
     priceInCents: 665,
     rating: 3.7,
     image: "produit2.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: true,
-        chocolatNoir: false,
-        noixNoisette: false,
-        fruit: false,
-        caramel: true,
-        liqueur: false
-    }
+    catégories: [
+        "chocolatLait",
+        "caramel",
+    ]
 },{
     id: nanoid(),
     title: "Liqu'heureux",
     priceInCents: 585,
     rating: 4.2,
     image: "produit3.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: false,
-        chocolatNoir: true,
-        noixNoisette: false,
-        fruit: true,
-        caramel: false,
-        liqueur: true
-    }
+    catégories: [
+        "chocolatNoir",
+        "fruit",
+        "liqueur"
+    ]
 },{
     id: nanoid(),
     title: "Blanc Coeur",
     priceInCents: 715,
     rating: 4.5,
     image: "produit4.jpg",
-    catégories: {
-        chocolatBlanc: true,
-        chocolatLait: false,
-        chocolatNoir: false,
-        noixNoisette: true,
-        fruit: false,
-        caramel: false,
-        liqueur: false
-    }
+    catégories: [
+        "chocolatBlanc",
+        "noixNoisette",
+    ]
 },{
     id: nanoid(),
     title: "L'écureuil",
     priceInCents: 355,
     rating: 4.3,
     image: "produit5.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: true,
-        chocolatNoir: false,
-        noixNoisette: true,
-        fruit: false,
-        caramel: true,
-        liqueur: false
-    }
+    catégories: [
+        "chocolatLait",
+        "noixNoisette",
+        "caramel",
+    ]
 },{
     id: nanoid(),
     title: "Rocher Blanc",
     priceInCents: 475,
     rating: 3.9,
     image: "produit6.jpg",
-    catégories: {
-        chocolatBlanc: true,
-        chocolatLait: true,
-        chocolatNoir: false,
-        noixNoisette: false,
-        fruit: false,
-        caramel: true,
-        liqueur: false
-    }
+    catégories: [
+        "chocolatBlanc",
+        "chocolatLait",
+        "caramel",
+    ]
 },{
     id: nanoid(),
     title: "Le Moche",
     priceInCents: 510,
     rating: 2.9,
     image: "produit7.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: true,
-        chocolatNoir: false,
-        noixNoisette: true,
-        fruit: true,
-        caramel: false,
-        liqueur: true
-    }
+    catégories: [
+        "chocolatLait",
+        "noixNoisette",
+        "fruit",
+        "liqueur"
+    ]
 },{
     id: nanoid(),
     title: "Love",
     priceInCents: 745,
     rating: 4.7,
     image: "produit8.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: false,
-        chocolatNoir: true,
-        noixNoisette: true,
-        fruit: true,
-        caramel: false,
-        liqueur: false
-    }
+    catégories: [ 
+        "chocolatNoir",
+        "noixNoisette",
+        "fruit",
+    ]
 },{
     id: nanoid(),
     title: "L'arlequin",
     priceInCents: 825,
     rating: 4.9,
     image: "produit9.jpg",
-    catégories: {
-        chocolatBlanc: false,
-        chocolatLait: false,
-        chocolatNoir: true,
-        noixNoisette: true,
-        fruit: false,
-        caramel: true,
-        liqueur: true
-    }
+    catégories: [
+        "chocolatNoir",
+        "noixNoisette",
+        "caramel",
+        "liqueur"
+]
 }]
 
 export default Data;
