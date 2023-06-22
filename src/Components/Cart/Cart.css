@@ -1,0 +1,112 @@
+.cartHidden {
+    display: none;
+}
+
+.cartDisplay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    /*padding-bottom: 300px !important;*/
+}
+
+.cart {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 200px auto 500px;
+}
+
+.cartHeader {
+    background-color: #FFD543;
+    position: relative;
+}
+
+.closeCartButton {
+    font-size: 5rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    width: 60px;
+    height: 60px;
+    border: none;
+    margin-top: -10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.cartHeader > h3 {
+    position: absolute;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    top: 10%;
+    left: 50%;
+    margin-left: -75.5px;
+    text-shadow: #B65F28 4px 4px;
+}
+
+.cartBody {
+    background-color: #B65F28;
+    
+}
+
+.cartFooter {
+    background-color: #FFD543;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartFooter > p {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.validateCartButtons {
+    font-size: 2.3rem;
+    margin: 30px 0 10px;
+    width: 500px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #B65F28;
+    border-radius: 5px;
+    box-shadow: 5px 5px #2C1E1E;
+    cursor: pointer;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) { 
+    .blank {
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.333);
+    }
+
+    .cart {
+        width: 50%;
+    }
+
+    .cartDisplay {
+        display: flex;
+        /*padding-bottom: 300px !important;*/
+    }
+}
+
+@media screen and (min-width: 1024px) { 
+    
+
+}
+
+
+@media screen and (min-width: 1200px) { 
+    
+
+}
+
+@media screen and (min-width: 1700px) { 
+    
+
+}

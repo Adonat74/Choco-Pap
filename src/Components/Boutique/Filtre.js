@@ -153,7 +153,7 @@ export default function Filtre (props) {
                 <span className="checkmark"></span>
                 </label><br/>
             </form>
-            <h3 onClick={handleClickPrice} className="filterNames">Prix <span className="spanPlus">{togglePrice ? "-" : "+"}</span></h3>
+            <h3 onClick={windowWidth < 768 ? handleClickPrice : null} className="filterNames">Prix <span className="spanPlus">{togglePrice ? "-" : "+"}</span></h3>
             <form className={ togglePrice ? "price" : "hidden"}>
                 <label className="labelSelect" htmlFor="minPrice">Prix min</label>
                 <select className="select"
@@ -176,7 +176,7 @@ export default function Filtre (props) {
                     {priceSelectOptions}
                 </select>
                 </form>
-                <h3 onClick={handleClickRating} className="filterNames">Notes<span className="spanPlus">{toggleRating ? "-" : "+"}</span></h3>
+                <h3 onClick={windowWidth < 768 ? handleClickRating : null} className="filterNames">Notes<span className="spanPlus">{toggleRating ? "-" : "+"}</span></h3>
                 <form className={toggleRating ? "rating" : "hidden"}>
 
                 <label className="labelSelect" htmlFor="minRating">Note min</label>

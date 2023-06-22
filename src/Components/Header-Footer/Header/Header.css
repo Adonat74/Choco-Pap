@@ -7,6 +7,19 @@
     height: 110px;
 }
 
+.headerFixed {
+    display: flex;
+    background-color: #2C1E1E;
+    color: #55C0CF;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .logo {
     width: 70px;
     height: 70px;
@@ -31,6 +44,7 @@
     display: flex;
     align-items: center;
     margin: 0 15px;
+    cursor: pointer;
 }
 
 .cartLogo {
@@ -48,6 +62,11 @@
     padding: 0;
     text-decoration: underline;
 }
+
+.menuDeroulant > div {
+    cursor: pointer;
+}
+
 
 .menuDeroulant > a {
     color: #55C0CF;
