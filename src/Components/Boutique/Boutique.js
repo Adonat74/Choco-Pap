@@ -1,5 +1,5 @@
 import React from "react"
-import Data from "./Data/Data"
+import Data from "../Data/Data"
 import Filtre from "./Filtre"
 import Produits from "./Produits"
 import "./Boutique.css"
@@ -9,13 +9,11 @@ export default function Boutique () {
     const [productsCategoriesRemoved, setProductsCategoriesRemoved] = React.useState([]); 
 
     
-
-
+    
     const [selectFilterValues, setSelectFilterValues] = React.useState({minPrice: 1, maxPrice: 10, 
                                                             minRating: 1, maxRating: 5});
 
 
-    
     function handleSelect (event) {
         setSelectFilterValues(prevState => {
             return {
@@ -30,28 +28,31 @@ export default function Boutique () {
     const [categoriesFilterValue, setCategoriesFilterValue] = React.useState({chocolatBlanc: false, chocolatLait: false,
                                                     chocolatNoir: false, noixNoisette: false, fruit: false,
                                                     caramel: false, liqueur: false});
+    //state de la checkbox "Tous"
+    const [allCategoriesValue, setAllCategoriesValue] = React.useState(true);
 
-    const [checkTousValue, setCheckTousValue] = React.useState(true);
 
-
-    function handleTous (event) {
-        setCheckTousValue(true);
+    function handleAllCategoriesCheckBox (event) {
+        setAllCategoriesValue(true);
+        //permet de remettre les valeurs des catégories à false
         setCategoriesFilterValue(prevState => {
             return Object.assign(...Object.keys(prevState).map(k => ({ [k]: false })));
         });
+        //remet à zéro le tableau des des catégories à filtrer
         return event.target.checked ? setProductsCategoriesRemoved([]) : null;
     }
     
 
     function handleChange (category, event) {
-        setCheckTousValue(false);
+        setAllCategoriesValue(false);
+        //met à jours le state des catécories
         setCategoriesFilterValue(prevState => {
             return {
                 ...prevState,
                 [event.target.name]: event.target.checked
                 }
         });
-        
+        //Ajoute ou enlève les catégories à filtrer
         if (event.target.checked) {
             setProductsCategoriesRemoved([...productsCategoriesRemoved, category]);
         } else {
@@ -65,7 +66,7 @@ export default function Boutique () {
 
 
 
-
+    //filtre les datas en fonction des catégories à filtrer
     const filteredProducts = Data.filter(product => 
             productsCategoriesRemoved.length > 0 
                 ? productsCategoriesRemoved.every(cat => 
@@ -73,7 +74,7 @@ export default function Boutique () {
                   )
                 : Data
     );
-
+    
     const selectedProducts = filteredProducts.filter(product => {
         return product.priceInCents/100 >= parseInt(selectFilterValues.minPrice) 
             && product.priceInCents/100 <= parseInt(selectFilterValues.maxPrice)
@@ -108,9 +109,9 @@ export default function Boutique () {
             <div className="boutique">
                 <Filtre 
                     handleChange={handleChange}
-                    handleTous={handleTous} 
+                    handleAllCategoriesCheckBox={handleAllCategoriesCheckBox} 
                     value={categoriesFilterValue}
-                    tousValue={checkTousValue}
+                    tousValue={allCategoriesValue}
                     handleSelect={handleSelect}
 
                     valueSelect={selectFilterValues}

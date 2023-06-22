@@ -5,7 +5,23 @@ export default function Filtre (props) {
 
     const numberListPrice = [1,2,3,4,5,6,7,8,9,10];
     const numberListRating = [1,2,3,4,5];
+
+
+    const [toggleCategories, setToggleCategories] = React.useState(false);
+    const [togglePrice, setTogglePrice] = React.useState(false);
+    const [toggleRating, setToggleRating] = React.useState(false);
     
+    function handleClickCategories () {
+            setToggleCategories(preState => !preState);
+    }
+
+    function handleClickPrice () {
+        setTogglePrice(preState => !preState);
+    }
+
+    function handleClickRating () {
+        setToggleRating(preState => !preState);
+    }
 
 
     const priceSelectOptions = numberListPrice.map((number, index) => {
@@ -27,22 +43,24 @@ export default function Filtre (props) {
     });
 
 
-
     return (
         <div className="filter">
             <h2>Filtre</h2>
-            <form>
-                <h3>Catégories</h3>
+            <h3 onClick={handleClickCategories} className="filterNames">Catégories {toggleCategories ? "-" : "+"}</h3>
+            <form className={toggleCategories ? "categories" : "hidden"}>
+                <label className="checkboxContainer" htmlFor="tous">Tous
                 <input
                     type="checkbox" 
                     id="tous" 
                     value={props.tousValue}
                     checked={props.tousValue}
-                    onChange={(event) => props.handleTous(event)}
+                    onChange={(event) => props.handleAllCategoriesCheckBox(event)}
                     name="tous"
                 />
-                <label htmlFor="tous">Tous</label><br/>
-                
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="chocolatBlanc">Chocolat blanc
                 <input
                     type="checkbox"
                     id="chocolatBlanc" 
@@ -51,7 +69,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("chocolatBlanc", event)}
                     name="chocolatBlanc"
                 />
-                <label htmlFor="chocolatBlanc">Chocolat blanc</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="chocolatLait">Chocolat au lait
                 <input
                     type="checkbox" 
                     id="chocolatLait" 
@@ -60,7 +81,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("chocolatLait", event)}
                     name="chocolatLait"
                 />
-                <label htmlFor="chocolatLait">Chocolat au lait</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="chocolatNoir">Chocolat noir
                 <input
                     type="checkbox" 
                     id="chocolatNoir" 
@@ -69,7 +93,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("chocolatNoir", event)}
                     name="chocolatNoir"
                 />
-                <label htmlFor="chocolatNoir">Chocolat noir</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="noixNoisette">Noix/Noisette
                 <input
                     type="checkbox" 
                     id="noixNoisette" 
@@ -78,7 +105,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("noixNoisette", event)}
                     name="noixNoisette"
                 />
-                <label htmlFor="noixNoisette">Noix/Noisette</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="fruit">Fruit
                 <input
                     type="checkbox" 
                     id="fruit" 
@@ -87,7 +117,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("fruit", event)}
                     name="fruit"
                 />
-                <label htmlFor="fruit">Fruit</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="caramel">Caramel
                 <input
                     type="checkbox" 
                     id="caramel" 
@@ -96,7 +129,10 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("caramel", event)}
                     name="caramel"
                 />
-                <label htmlFor="caramel">Caramel</label><br/>
+                <span className="checkmark"></span>
+                </label><br/>
+
+                <label className="checkboxContainer" htmlFor="liqueur">Liqueur
                 <input
                     type="checkbox" 
                     id="liqueur" 
@@ -105,12 +141,13 @@ export default function Filtre (props) {
                     onChange={(event) => props.handleChange("liqueur", event)}
                     name="liqueur"
                 />
-                <label htmlFor="liqueur">Liqueur</label><br/>
-
-                <h3>Prix</h3>
-
-                <label htmlFor="minPrice">Prix min</label>
-                <select 
+                <span className="checkmark"></span>
+                </label><br/>
+            </form>
+            <h3 onClick={handleClickPrice} className="filterNames">Prix {togglePrice ? "-" : "+"}</h3>
+            <form className={ togglePrice ? "price" : "hidden"}>
+                <label className="labelSelect" htmlFor="minPrice">Prix min</label>
+                <select className="select"
                     id="minPrice" 
                     value={props.valueSelect.minPrice}
                     onChange={(event) => props.handleSelect(event)}
@@ -120,8 +157,8 @@ export default function Filtre (props) {
                 </select>
                 <br/>
 
-                <label htmlFor="maxPrice">Prix max</label>
-                <select 
+                <label className="labelSelect" htmlFor="maxPrice">Prix max</label>
+                <select className="select"
                     id="maxPrice" 
                     value={props.valueSelect.maxPrice}
                     onChange={(event) => props.handleSelect(event)}
@@ -129,11 +166,12 @@ export default function Filtre (props) {
                 >
                     {priceSelectOptions}
                 </select>
+                </form>
+                <h3 onClick={handleClickRating} className="filterNames">Notes {toggleRating ? "-" : "+"}</h3>
+                <form className={toggleRating ? "rating" : "hidden"}>
 
-                <h3>Notes</h3>
-
-                <label htmlFor="minRating">Note min</label>
-                <select 
+                <label className="labelSelect" htmlFor="minRating">Note min</label>
+                <select className="select" 
                     id="minRating" 
                     value={props.valueSelect.minRating}
                     onChange={(event) => props.handleSelect(event)}
@@ -142,8 +180,8 @@ export default function Filtre (props) {
                     {ratingSelectOptions}
                 </select><br/>
 
-                <label htmlFor="maxRating">Note max</label>
-                <select 
+                <label className="labelSelect" htmlFor="maxRating">Note max</label>
+                <select className="select" 
                     id="maxRating" 
                     value={props.valueSelect.maxRating}
                     onChange={(event) => props.handleSelect(event)}
