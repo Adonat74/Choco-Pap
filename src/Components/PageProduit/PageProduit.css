@@ -3,10 +3,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
-.productContainer {
+.pProductContainer {
     width: 100%;
     margin: 10% 0;
 }
@@ -14,17 +14,58 @@
 .produit {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
+}
+
+.nomProduit {
+    font-size: 4rem;
+    color: #FFD543;
+    letter-spacing: 2px;
+    text-shadow: #2C1E1E 5px 5px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1.2rem;
+    width: 80%;
+    font-weight: 600;
+}
+
+.productQuantity {
+    width: 80px;
+    margin: 0 0 25px;
+    height: 30px;
+    font-size: 1.3rem;
+    border: none;
+}
+
+.addToCartButton {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 7%;
+    padding: 10px;
+    color: #2C1E1E;
+    background-color: #FFD543;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px #2C1E1E;
+    cursor: pointer;
 }
 
 .pProductImage {
     width: 100%;
-    height: auto;
+    height: 400px;
     object-fit: cover;
     margin-top: 50px;
 }
 
 .details {
     text-align: start;
+    margin-left: 20px;
 }
 
 .quantityButton {
@@ -34,4 +75,76 @@
 
 .textIngredients {
     text-align: start;
+    margin-left: 20px;
+}
+
+.textIngredients > h4 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    color: #FFD543;
+    text-shadow: #2C1E1E 4px 4px;
+}
+
+.ingredients {
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) { 
+    .pProductContainer {
+        width: 90%;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) { 
+    .produit {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .nomProduit {
+        margin-top: 0;
+    }
+
+    .description {
+        width: 100%;
+    }
+
+    .pProductImage {
+        width: 60%;
+        height: 500px;
+        margin: 0;
+    }
+
+    .quantityButton {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .addToCartButton {
+        font-size: 2.2rem;
+        padding: 10px 20px;
+    }
+
+    .productQuantity {
+        margin: 0;
+        height: 55px;
+        font-size: 2rem;
+    }
+
+}
+
+
+@media screen and (min-width: 1200px) { 
+    
+}
+
+@media screen and (min-width: 1700px) { 
+
 }

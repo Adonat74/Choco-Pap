@@ -10,6 +10,15 @@ export default function Filtre (props) {
     const [toggleCategories, setToggleCategories] = React.useState(false);
     const [togglePrice, setTogglePrice] = React.useState(false);
     const [toggleRating, setToggleRating] = React.useState(false);
+
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+
+    React.useEffect(() => {
+        return window.addEventListener("resize", () => {
+            setWindowWidth(window.innerWidth);
+        });
+    }, []);
     
     function handleClickCategories () {
             setToggleCategories(preState => !preState);
@@ -46,7 +55,7 @@ export default function Filtre (props) {
     return (
         <div className="filter">
             <h2>Filtre</h2>
-            <h3 onClick={handleClickCategories} className="filterNames">Catégories {toggleCategories ? "-" : "+"}</h3>
+            <h3 onClick={windowWidth < 768 ? handleClickCategories : null} className="filterNames">Catégories <span className="spanPlus">{toggleCategories ? "-" : "+"}</span></h3>
             <form className={toggleCategories ? "categories" : "hidden"}>
                 <label className="checkboxContainer" htmlFor="tous">Tous
                 <input
@@ -144,7 +153,7 @@ export default function Filtre (props) {
                 <span className="checkmark"></span>
                 </label><br/>
             </form>
-            <h3 onClick={handleClickPrice} className="filterNames">Prix {togglePrice ? "-" : "+"}</h3>
+            <h3 onClick={handleClickPrice} className="filterNames">Prix <span className="spanPlus">{togglePrice ? "-" : "+"}</span></h3>
             <form className={ togglePrice ? "price" : "hidden"}>
                 <label className="labelSelect" htmlFor="minPrice">Prix min</label>
                 <select className="select"
@@ -167,7 +176,7 @@ export default function Filtre (props) {
                     {priceSelectOptions}
                 </select>
                 </form>
-                <h3 onClick={handleClickRating} className="filterNames">Notes {toggleRating ? "-" : "+"}</h3>
+                <h3 onClick={handleClickRating} className="filterNames">Notes<span className="spanPlus">{toggleRating ? "-" : "+"}</span></h3>
                 <form className={toggleRating ? "rating" : "hidden"}>
 
                 <label className="labelSelect" htmlFor="minRating">Note min</label>

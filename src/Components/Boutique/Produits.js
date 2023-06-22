@@ -4,8 +4,6 @@ import "./Boutique.css"
 
 export default function Produits (props) {
 
-    console.log(props.id)
-
     return (
         <div className="productContainer">
             <Link to={`/pageProduit/${props.id}`}>
