@@ -1,10 +1,10 @@
 import React from "react"
 import Data from "../Data/Data"
 import Filtre from "./Filtre"
-import Produits from "./Produits"
 import "./Boutique.css"
+import { Link } from "react-router-dom"
 
-export default function Boutique () {
+export default function Boutique (props) {
 
     const [productsCategoriesRemoved, setProductsCategoriesRemoved] = React.useState([]); 
 
@@ -52,6 +52,8 @@ export default function Boutique () {
                 [event.target.name]: event.target.checked
                 }
         });
+
+
         //Ajoute ou enlève les catégories à filtrer
         if (event.target.checked) {
             setProductsCategoriesRemoved([...productsCategoriesRemoved, category]);
@@ -61,8 +63,6 @@ export default function Boutique () {
             );
         }
     }
-
-
 
 
 
@@ -84,22 +84,17 @@ export default function Boutique () {
 
 
 
-
-    
-
-
-
-    const productElements = selectedProducts.map((data, index) => {
+    const productElements = selectedProducts.map(data => {
         return (
-            <Produits 
-                key={data.id}
-                id={data.id}
-                index={index}
-                title={data.title}
-                price={data.priceInCents}
-                rating={data.rating}
-                img={data.image}
-            />
+            <div className="productContainer">
+                <Link to={`/pageProduit/${data.id}`}>
+                    <img className="productImage" src={`/images/${data.image}`}></img>
+                    <h3 className="productName">{data.title}</h3>
+                </Link>
+                <p>{data.priceInCents / 100} €</p>
+                <p>Note: {data.rating}</p>
+                <button onClick={() => props.handleAddToCart(data.id, 1)} className="productButton">Ajouter au panier</button>
+            </div>
         );
     });
 

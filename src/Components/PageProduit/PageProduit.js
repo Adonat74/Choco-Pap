@@ -3,10 +3,22 @@ import { useParams } from "react-router-dom"
 import Data from "../Data/Data"
 import "./PageProduit.css"
 
-export default function PageProduit () {
+export default function PageProduit (props) {
 
-    const {productId} = useParams()
-    const thisProduct = Data.find(prod => prod.id === productId)
+    const {productId} = useParams();
+    const thisProduct = Data.find(prod => prod.id === productId);
+
+    const [quantityAddedToCart, setQuantityAddedToCart] = React.useState(1);
+    
+    function handleChange (event) {
+        setQuantityAddedToCart(parseInt(event.target.value));
+    }
+
+
+    function handleSubmit (event) {
+        event.preventDefault();
+        props.handleAddToCart(thisProduct.id, quantityAddedToCart);
+    }
 
     return (
         <div className="pageProduit">
@@ -17,10 +29,10 @@ export default function PageProduit () {
                         <h2 className="nomProduit">{thisProduct.title}</h2>
                         <p className="price">{thisProduct.priceInCents/100} €</p>
                         <p className="description">Aliquam ultricies, quam et efficitur ornare, eros ipsum tempor augue, vel laoreet mauris diam in neque. Sed ac neque efficitur eros placerat sodales a tincidunt justo. Quisque ultricies venenatis suscipit. Pellentesque ultrices tellus ut augue eleifend, et convallis nulla mollis. Integer a libero et sem bibendum semper.</p>
-                        <div className="quantityButton">
-                            <input className="productQuantity" type="number" min={1} value={1}/>
+                        <form onSubmit={handleSubmit} className="quantityButton">
+                            <input className="productQuantity" onChange={handleChange} type="number" min={1} defaultValue={1}/>
                             <button className="addToCartButton">Ajouter au panier</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div className="textIngredients">
@@ -29,5 +41,5 @@ export default function PageProduit () {
                 </div>
             </div>
         </div>
-    )
+    );
 }

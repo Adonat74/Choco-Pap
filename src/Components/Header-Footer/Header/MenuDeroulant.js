@@ -10,7 +10,7 @@ export default function MenuDeroulant (props) {
                 <a href="/boutique" className="elementsDeroulant">Boutique</a>
                 <div onClick={() => props.handleCartToggle()} className="elementsDeroulant">
                     <a>Panier</a>
-                    <p className="nbPanier">{props.cartQuantity}</p>
+                    <p className="nbPanier">{props.cartQuantity.length}</p>
                     <img className="cartLogoDeroulant" src="/images/icons/cart-shopping-solid.svg" alt="Cart Logo"></img>
                 </div>
             </div>

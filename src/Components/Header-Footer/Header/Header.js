@@ -1,5 +1,4 @@
 import React from "react" 
-import MenuDeroulant from "./MenuDeroulant";
 import "./Header.css"
 
 export default function Header (props) {
@@ -12,7 +11,7 @@ export default function Header (props) {
                     <a href="/accueil">Accueil</a>
                     <a href="/boutique">Boutique</a>
                     <div onClick={() => props.handleCartToggle()} className="cartContainer">
-                        <p>{props.cartQuantity}</p>
+                        <p>{props.cartQuantity.length}</p>
                         <img className="cartLogo" src="/images/icons/cart-shopping-solid.svg" alt="Cart Logo"></img>
                     </div>
                 </div>
