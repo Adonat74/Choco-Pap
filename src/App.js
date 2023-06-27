@@ -5,7 +5,7 @@ import Accueil from "./Components/Accueil/Accueil";
 import Boutique from "./Components/Boutique/Boutique";
 import PageProduit from "./Components/PageProduit/PageProduit"
 import Cart from "./Components/Cart/Cart"
-import Data from "./Components/Data/Data"
+
 import React from "react"
 import { Routes, Route } from "react-router-dom";
 import './App.css';
@@ -17,25 +17,36 @@ export default function App() {
   const [cartToggle, setCartToggle] = React.useState(false);
   const [cartProducts, setCartProducts] = React.useState([]);
 
+
   function handleAddToCart (id, quantityAdded) {
-    Data.map(product => {
-      if (product.id === id) {
-        for (let i = 0; i < quantityAdded; i++) {
-        setCartProducts(prevState => {
-            return [...prevState, 
-              product];
-        });
-      }}
-    });
-    console.log(cartProducts);
+
+    if (cartProducts.some(item => item.index === id)) {
+      setCartProducts(prevState => prevState.map(item => item.index === id 
+        ? {...item, quantity: item.quantity + quantityAdded}
+        : item
+      ));
+    } else {
+      setCartProducts(prevState => [...prevState, {index: id, quantity: quantityAdded}]);
+    }
+    
+  console.log(cartProducts);
   }
+
+
+    
+
+    
+
+
+
+
 
   function toggleMenu () {
     setMenuToggle(prevState => !prevState);
   }
 
   function handleCartToggle () {
-    setCartToggle(prevSTate => !prevSTate);
+    setCartToggle(prevState => !prevState);
   }
 
   function closeCart () {

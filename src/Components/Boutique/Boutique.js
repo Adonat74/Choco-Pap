@@ -86,7 +86,7 @@ export default function Boutique (props) {
 
     const productElements = selectedProducts.map(data => {
         return (
-            <div className="productContainer">
+            <div className="productContainer" key={data.id}>
                 <Link to={`/pageProduit/${data.id}`}>
                     <img className="productImage" src={`/images/${data.image}`}></img>
                     <h3 className="productName">{data.title}</h3>
