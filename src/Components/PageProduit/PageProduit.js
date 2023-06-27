@@ -17,7 +17,7 @@ export default function PageProduit (props) {
 
     function handleSubmit (event) {
         event.preventDefault();
-        props.handleAddToCart(thisProduct.id, quantityAddedToCart);
+        props.handleAddToCart(thisProduct, quantityAddedToCart);
     }
 
     return (

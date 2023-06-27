@@ -93,7 +93,7 @@ export default function Boutique (props) {
                 </Link>
                 <p>{data.priceInCents / 100} €</p>
                 <p>Note: {data.rating}</p>
-                <button onClick={() => props.handleAddToCart(data.id, 1)} className="productButton">Ajouter au panier</button>
+                <button onClick={() => props.handleAddToCart(data, 1)} className="productButton">Ajouter au panier</button>
             </div>
         );
     });

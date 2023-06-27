@@ -1,5 +1,4 @@
 import React from "react"
-import Data from "../Data/Data"
 import "./Cart.css"
 
 
@@ -7,29 +6,27 @@ export default function Cart (props) {
 
     
 
+    const totalCart = props.cartProducts.reduce((total, product) => total + product.priceInCents / 100 * product.quantity, 0)
+    
+
 
     const products = props.cartProducts.map(product => {
 
-         Data.filter(item => {
-                return item.id === product.index
-        })
-    });
-
-        products.map(cartData => {
-            return (
-                <div className="cartProductContainer" key={cartData.id}>
-                    <button className="cartDeleteProduct">&times;</button>
-                    <img className="cartImageProduct" src={`/images/${cartData.image}`} alt="Image produit"></img>
-                    <div className="cartProductInfo">
-                        <div>
-                            <h4 className="productCartTitle">{cartData.title}</h4>
-                            <p className="productCartPrice">{cartData.priceInCents/100} €</p>
-                        </div>
-                        <input className="cartInputNumber" type="number" min={1} defaultValue={1}></input>
-                    </div>
-                </div>
-            );
-        });
+           return (
+               <div className="cartProductContainer" key={product.id}>
+                   <button onClick={() => props.handleDeleteCartProduct(product.id)} className="cartDeleteProduct">&times;</button>
+                   <img className="cartImageProduct" src={`/images/${product.image}`} alt="Image produit"></img>
+                   <div className="cartProductInfo">
+                       <div>
+                           <h4 className="productCartTitle">{product.title}</h4>
+                           <p className="productCartPrice">{product.priceInCents/100} €</p>
+                       </div>
+                       <input className="cartInputNumber" type="number" onChange={(event) => props.handleCartQuantityChange(event, product.id)} min={1} value={product.quantity}></input>
+                   </div>
+               </div>
+           );
+       });
+        
     
 
 
@@ -47,8 +44,8 @@ export default function Cart (props) {
                     {products}
                 </div>
                 <div className="cartFooter">
-                    <p>Total: 10 €</p>
-                    <button className="validateCartButtons">REINITIALISER LE PANIER</button>
+                    <p>Total: {totalCart.toFixed(2)} €</p>
+                    <button onClick={() => props.handleDeleteAllCart()} className="validateCartButtons">REINITIALISER LE PANIER</button>
                     <button className="validateCartButtons">VALIDER LE PANIER</button>
                 </div>
             </div>

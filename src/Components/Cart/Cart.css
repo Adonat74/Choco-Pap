@@ -90,10 +90,12 @@
     background-color: transparent;
     border: none;
     text-shadow: black 0px 4px;
+    cursor: pointer;
 }
 
 .cartImageProduct {
     width: 170px;
+    height: 130px;
     object-fit: cover;
     margin: 0 15px 0 10px;
 }
@@ -103,6 +105,7 @@
     margin: 5px 0 0 0;
     color: #FFD543;
     text-shadow: #2C1E1E 3px 3px;
+    min-width: 180px;
 }
 
 .productCartPrice {

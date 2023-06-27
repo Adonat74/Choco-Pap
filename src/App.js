@@ -5,7 +5,6 @@ import Accueil from "./Components/Accueil/Accueil";
 import Boutique from "./Components/Boutique/Boutique";
 import PageProduit from "./Components/PageProduit/PageProduit"
 import Cart from "./Components/Cart/Cart"
-
 import React from "react"
 import { Routes, Route } from "react-router-dom";
 import './App.css';
@@ -15,26 +14,41 @@ export default function App() {
 
   const [menuToggle, setMenuToggle] = React.useState(false);
   const [cartToggle, setCartToggle] = React.useState(false);
-  const [cartProducts, setCartProducts] = React.useState([]);
+  const [cartProducts, setCartProducts] = React.useState(JSON.parse(localStorage.getItem("cart")) || []);
 
 
-  function handleAddToCart (id, quantityAdded) {
+  function handleAddToCart (newItem, quantityAdded) {
 
-    if (cartProducts.some(item => item.index === id)) {
-      setCartProducts(prevState => prevState.map(item => item.index === id 
+    if (cartProducts.some(item => item.id === newItem.id)) {
+      setCartProducts(prevState => prevState.map(item => item.id === newItem.id 
         ? {...item, quantity: item.quantity + quantityAdded}
         : item
       ));
     } else {
-      setCartProducts(prevState => [...prevState, {index: id, quantity: quantityAdded}]);
+      setCartProducts(prevState => [...prevState, {...newItem, quantity: quantityAdded}]);
     }
-    
   console.log(cartProducts);
   }
 
 
-    
 
+  function handleDeleteCartProduct (id) {
+    setCartProducts(prevState => prevState.filter(product => {
+      return product.id !== id
+    }));
+  }
+
+  function handleDeleteAllCart () {
+    setCartProducts([]);
+  }
+
+  function handleCartQuantityChange (event, id) {
+    setCartProducts(prevState => prevState.map(product => {
+      return product.id === id ? {...product, quantity: parseInt(event.target.value)} : product
+    }));
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
     
 
 
@@ -55,7 +69,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header cartToggle={cartToggle} toggleMenu={toggleMenu} handleCartToggle={handleCartToggle} cartQuantity={cartProducts}/>
+      <Header cartToggle={cartToggle} 
+              toggleMenu={toggleMenu} 
+              handleCartToggle={handleCartToggle} 
+              cartQuantity={cartProducts}/>
 
       {menuToggle && !cartToggle ? <MenuDeroulant handleCartToggle={handleCartToggle} cartQuantity={cartProducts}/> : null}
 
@@ -63,7 +80,12 @@ export default function App() {
 
       <Cart cartToggle={cartToggle}
             closeCart={closeCart}
-            cartProducts={cartProducts}/>
+            cartProducts={cartProducts}
+            handleDeleteCartProduct={handleDeleteCartProduct}
+            handleDeleteAllCart={handleDeleteAllCart}
+            handleCartQuantityChange={handleCartQuantityChange}/>
+            
+            
 
       <Routes>
         <Route index element={<Accueil />} />

@@ -11,7 +11,8 @@ const Data = [{
         "noixNoisette",
         "fruit",
         "liqueur"
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Caramel'oeuf",
@@ -21,7 +22,8 @@ const Data = [{
     catégories: [
         "chocolatLait",
         "caramel",
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Liqu'heureux",
@@ -32,7 +34,8 @@ const Data = [{
         "chocolatNoir",
         "fruit",
         "liqueur"
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Blanc Coeur",
@@ -42,7 +45,8 @@ const Data = [{
     catégories: [
         "chocolatBlanc",
         "noixNoisette",
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "L'écureuil",
@@ -53,7 +57,8 @@ const Data = [{
         "chocolatLait",
         "noixNoisette",
         "caramel",
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Rocher Blanc",
@@ -64,7 +69,8 @@ const Data = [{
         "chocolatBlanc",
         "chocolatLait",
         "caramel",
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Le Moche",
@@ -76,7 +82,8 @@ const Data = [{
         "noixNoisette",
         "fruit",
         "liqueur"
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "Love",
@@ -87,7 +94,8 @@ const Data = [{
         "chocolatNoir",
         "noixNoisette",
         "fruit",
-    ]
+    ],
+    quantity: 0
 },{
     id: nanoid(),
     title: "L'arlequin",
@@ -99,7 +107,8 @@ const Data = [{
         "noixNoisette",
         "caramel",
         "liqueur"
-]
+    ],
+    quantity: 0
 }]
 
 export default Data;
