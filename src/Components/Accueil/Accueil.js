@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import RadioButtons from "./RadioButtons"
 import "./Accueil.css"
 
@@ -28,7 +29,7 @@ export default function Accueil () {
         <div className="sliderContainer">
             <div className="slider">
                 <h1 className="titreAccueil">CHOCO PAP</h1>
-                <a href="/boutique" className="buttonAccueil">Voir la boutique</a>
+                <Link to="/boutique-bonbons-chocolats" className="buttonAccueil">Voir la boutique</Link>
                 <div className="slides">
                     <div id="slide1" className="slide">
                         <img className="slidesImages" src="/images/accueil1.jpg" alt="Slides Images 1"></img>

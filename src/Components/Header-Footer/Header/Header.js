@@ -1,4 +1,5 @@
 import React from "react" 
+import { Link } from "react-router-dom"
 import "./Header.css"
 
 export default function Header (props) {
@@ -8,8 +9,8 @@ export default function Header (props) {
             <div className={props.cartToggle ? "headerFixed" : "header"}>
                 <img className="logo" src="/images/logo.png" alt="Logo Choco-Pap"></img>
                 <div className="menu">
-                    <a href="/accueil">Accueil</a>
-                    <a href="/boutique">Boutique</a>
+                    <Link to="/accueil-choco-pap">Accueil</Link>
+                    <Link to="/boutique-bonbons-chocolats">Boutique</Link>
                     <div onClick={() => props.handleCartToggle()} className="cartContainer">
                         <p>{props.cartQuantity.length}</p>
                         <img className="cartLogo" src="/images/icons/cart-shopping-solid.svg" alt="Cart Logo"></img>

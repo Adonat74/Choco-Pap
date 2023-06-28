@@ -5,8 +5,8 @@ import "./PageProduit.css"
 
 export default function PageProduit (props) {
 
-    const {productId} = useParams();
-    const thisProduct = Data.find(prod => prod.id === productId);
+    const {productTitle} = useParams();
+    const thisProduct = Data.find(prod => prod.title === productTitle);
 
     const [quantityAddedToCart, setQuantityAddedToCart] = React.useState(1);
     

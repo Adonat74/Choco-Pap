@@ -89,9 +89,9 @@ export default function App() {
 
       <Routes>
         <Route index element={<Accueil />} />
-        <Route path="/accueil" element={<Accueil />} />
-        <Route path="/boutique" element={<Boutique handleAddToCart={handleAddToCart} />} />
-        <Route path="/pageProduit/:productId" element={<PageProduit handleAddToCart={handleAddToCart} />} />
+        <Route path="/accueil-choco-pap" element={<Accueil />} />
+        <Route path="/boutique-bonbons-chocolats" element={<Boutique handleAddToCart={handleAddToCart} />} />
+        <Route path="/page-chocolat/:productTitle" element={<PageProduit handleAddToCart={handleAddToCart} />} />
         
       </Routes>
       <div className="space"></div>
