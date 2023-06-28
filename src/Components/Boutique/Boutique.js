@@ -3,8 +3,11 @@ import Data from "../Data/Data"
 import Filtre from "./Filtre"
 import "./Boutique.css"
 import { Link } from "react-router-dom"
+import TabTitle from "../../Utilities/GeneralFunction"
 
 export default function Boutique (props) {
+
+    TabTitle(`Boutique - Choco-pap`);
 
     const [productsCategoriesRemoved, setProductsCategoriesRemoved] = React.useState([]); 
 

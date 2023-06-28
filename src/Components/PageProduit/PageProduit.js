@@ -2,11 +2,16 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import Data from "../Data/Data"
 import "./PageProduit.css"
+import TabTitle from "../../Utilities/GeneralFunction"
 
 export default function PageProduit (props) {
 
+    
+
     const {productTitle} = useParams();
     const thisProduct = Data.find(prod => prod.title === productTitle);
+
+    TabTitle(`${thisProduct.title} - Choco-pap`);
 
     const [quantityAddedToCart, setQuantityAddedToCart] = React.useState(1);
     

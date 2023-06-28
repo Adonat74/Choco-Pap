@@ -9,7 +9,7 @@ export default function Header (props) {
             <div className={props.cartToggle ? "headerFixed" : "header"}>
                 <img className="logo" src="/images/logo.png" alt="Logo Choco-Pap"></img>
                 <div className="menu">
-                    <Link to="/accueil-choco-pap">Accueil</Link>
+                    <Link to="/">Accueil</Link>
                     <Link to="/boutique-bonbons-chocolats">Boutique</Link>
                     <div onClick={() => props.handleCartToggle()} className="cartContainer">
                         <p>{props.cartQuantity.length}</p>

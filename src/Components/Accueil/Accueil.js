@@ -2,9 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom"
 import RadioButtons from "./RadioButtons"
 import "./Accueil.css"
+import TabTitle from "../../Utilities/GeneralFunction"
 
 
 export default function Accueil () {
+
+    TabTitle(`Accueil - Choco-pap`);
 
     const [liens, setLiens] = React.useState([true, false, false]);
 

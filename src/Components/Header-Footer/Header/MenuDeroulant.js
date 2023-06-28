@@ -7,7 +7,7 @@ export default function MenuDeroulant (props) {
 
     return (
         <div className="menuDeroulant">
-                <Link to="/accueil-choco-pap" className="elementsDeroulant accueil">Accueil</Link>
+                <Link to="/" className="elementsDeroulant accueil">Accueil</Link>
                 <Link to="/boutique-bonbons-chocolats" className="elementsDeroulant">Boutique</Link>
                 <div onClick={() => props.handleCartToggle()} className="elementsDeroulant">
                     <a>Panier</a>
