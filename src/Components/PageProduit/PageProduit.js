@@ -11,7 +11,11 @@ export default function PageProduit (props) {
     const {productTitle} = useParams();
     const thisProduct = Data.find(prod => prod.title === productTitle);
 
-    TabTitle(`${thisProduct.title} - Choco-pap`);
+    React.useEffect (() => {
+        document.title =`${thisProduct.title} - Choco-pap`;
+    }, [])
+
+    //TabTitle(`${thisProduct.title} - Choco-pap`);
 
     const [quantityAddedToCart, setQuantityAddedToCart] = React.useState(1);
     
@@ -31,7 +35,7 @@ export default function PageProduit (props) {
                 <div className="produit">
                     <img className="pProductImage" src={`/images/${thisProduct.image}`}></img>
                     <div className="details">
-                        <h2 className="nomProduit">{thisProduct.title}</h2>
+                        <h1 className="nomProduit">{thisProduct.title}</h1>
                         <p className="price">{thisProduct.priceInCents/100} €</p>
                         <p className="description">Aliquam ultricies, quam et efficitur ornare, eros ipsum tempor augue, vel laoreet mauris diam in neque. Sed ac neque efficitur eros placerat sodales a tincidunt justo. Quisque ultricies venenatis suscipit. Pellentesque ultrices tellus ut augue eleifend, et convallis nulla mollis. Integer a libero et sem bibendum semper.</p>
                         <form onSubmit={handleSubmit} className="quantityButton">

@@ -7,7 +7,12 @@ import TabTitle from "../../Utilities/GeneralFunction"
 
 export default function Accueil () {
 
-    TabTitle(`Accueil - Choco-pap`);
+
+    React.useEffect (() => {
+        document.title =`Accueil - Choco-pap`;
+    }, [])
+
+    //TabTitle(`Accueil - Choco-pap`);
 
     const [liens, setLiens] = React.useState([true, false, false]);
 

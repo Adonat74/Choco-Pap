@@ -7,7 +7,11 @@ import TabTitle from "../../Utilities/GeneralFunction"
 
 export default function Boutique (props) {
 
-    TabTitle(`Boutique - Choco-pap`);
+    React.useEffect (() => {
+        document.title =`Boutique - Choco-pap`;
+    }, [])
+
+    //TabTitle(`Boutique - Choco-pap`);
 
     const [productsCategoriesRemoved, setProductsCategoriesRemoved] = React.useState([]); 
 
